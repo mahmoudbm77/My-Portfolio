@@ -13,13 +13,13 @@ My Portfolio is a personal portfolio website showcasing my projects, skills, and
 
 ## How to Use
 
-1. Open `portfolio-1.html` in a browser
+1. open the live demo bellow
 2. Browse through the About, Skills, and Projects sections
 3. Use the Contact section to get in touch
 4. Fully static — no setup or server required
 
 ## Live Demo
-_(add your live link here once deployed)_
+https://mahmoud-portfolio.bmmahmoud28.workers.dev/
 
 ## Tech Stack
 
