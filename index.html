@@ -137,6 +137,7 @@
 
   /* ---------------- about ---------------- */
   .about-wrap{ max-width:720px; }
+  @media(min-width:901px){ .about-wrap{ margin:0 auto; } }
   .dropcap{
     font-family:'Fraunces', serif; font-weight:600; font-size:4.4rem; line-height:.78;
     color:var(--clay); float:left; margin-inline-end:12px; margin-top:8px;
@@ -147,6 +148,11 @@
 
   /* ---------------- skills carousel ---------------- */
   .skills-head{ display:flex; justify-content:space-between; align-items:flex-end; margin-bottom:8px; gap:20px; }
+  @media(min-width:901px){
+    .skills-head{ display:grid; grid-template-columns:1fr auto 1fr; align-items:center; }
+    .skills-head > div:first-child{ grid-column:2; text-align:center; }
+    .skills-nav{ grid-column:3; justify-self:end; }
+  }
   .skills-head .sec-title{ margin-bottom:0; }
   .skills-nav{ display:flex; gap:10px; flex:none; }
   .skills-nav button{
@@ -178,8 +184,9 @@
   .cert-card{
     background:linear-gradient(155deg, color-mix(in srgb, var(--amber) 16%, var(--card)), var(--card));
     border-radius:28px; padding:clamp(28px,5vw,54px); display:flex; gap:34px; align-items:flex-start;
-    max-width:880px; box-shadow:0 30px 70px -30px var(--shadow);
+    max-width:880px; box-shadow:0 30px 70px -30px var(--shadow); margin-bottom:26px;
   }
+  .cert-card:last-child{ margin-bottom:0; }
   @media(max-width:700px){ .cert-card{ flex-direction:column; align-items:flex-start; } }
   .cert-badge{
     flex:none; width:74px; height:74px; border-radius:50%;
@@ -192,7 +199,14 @@
   .cert-meta b{ color:var(--ink); }
 
   /* ---------------- contact ---------------- */
-  .contact-list{ max-width:640px; }
+  .contact-list{ max-width:640px; margin:0 auto; }
+  @media(min-width:901px){
+    #contact .eyebrow, #contact .sec-title,
+    #about .eyebrow, #about .sec-title,
+    #focus .eyebrow, #focus .sec-title,
+    #projects .eyebrow, #projects .sec-title{ text-align:center; }
+    #projects .cert-card{ margin-inline:auto; }
+  }
   .contact-row{
     display:flex; justify-content:space-between; align-items:center; gap:20px;
     padding:22px 0; border-bottom:1px solid color-mix(in srgb, var(--ink-soft) 24%, transparent);
@@ -235,6 +249,7 @@
   /* ---------------- expertise cards ---------------- */
   .expertise-grid{ display:grid; grid-template-columns:repeat(2,1fr); gap:22px; max-width:860px; }
   @media(max-width:700px){ .expertise-grid{ grid-template-columns:1fr; } }
+  @media(min-width:901px){ .expertise-grid{ margin:0 auto; } }
   .expertise-card{
     background:var(--card); border-radius:24px; padding:36px 30px; text-align:center;
     box-shadow:0 24px 56px -28px var(--shadow); transition:transform .3s;
@@ -413,6 +428,20 @@
         <div class="cert-meta">
           <a href="https://finetrack.freedev.app/" target="_blank" rel="noopener" class="btn btn-fill" style="padding:10px 20px; font-size:.85rem;">Live demo</a>
           <a href="https://github.com/mahmoudbm77/Fine-Track-System" target="_blank" rel="noopener" class="btn btn-line" style="padding:10px 20px; font-size:.85rem;">Code</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="cert-card reveal">
+      <div class="cert-badge" style="background:var(--amber);">
+        <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4z"></path></svg>
+      </div>
+      <div>
+        <h3>Ajrli</h3>
+        <p>A Libyan property rental app targeting a summer 2026 launch — presented as a front-end slide deck covering marketing strategy, challenges and solutions, engagement plan, and future vision, in a dark ocean and cyan theme.</p>
+        <div class="cert-meta">
+          <a href="https://ahme-dtdm.vercel.app/" target="_blank" rel="noopener" class="btn btn-fill" style="padding:10px 20px; font-size:.85rem;">Live demo</a>
+          <a href="https://github.com/mahmoudbm77/Ajrli" target="_blank" rel="noopener" class="btn btn-line" style="padding:10px 20px; font-size:.85rem;">Code</a>
         </div>
       </div>
     </div>
