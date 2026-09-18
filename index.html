@@ -27,6 +27,11 @@
   <button class="toggle" id="themeToggle" aria-label="Toggle theme"><span class="knob"></span></button>
 </nav>
 
+<div class="theme-tip" id="themeTip">
+  <span>Tip: press <kbd>T</kbd> to switch themes</span>
+  <button class="theme-tip-close" id="themeTipClose" aria-label="Dismiss tip">&times;</button>
+</div>
+
 <div class="dock" id="dock">
   <a href="#about">About</a>
   <a href="#education">Education</a>
@@ -307,7 +312,27 @@
   const btn = document.getElementById('themeToggle');
   let theme = root.getAttribute('data-theme') || 'light';
   function render(){ root.setAttribute('data-theme', theme); localStorage.setItem('theme', theme); }
-  btn.addEventListener('click', ()=>{ theme = theme==='dark' ? 'light' : 'dark'; render(); });
+  function toggleTheme(){ theme = theme==='dark' ? 'light' : 'dark'; render(); }
+  btn.addEventListener('click', toggleTheme);
+  document.addEventListener('keydown', (e)=>{
+    if(e.metaKey || e.ctrlKey || e.altKey) return;
+    if(e.target.matches('input, textarea, [contenteditable="true"]')) return;
+    if(e.key.toLowerCase() === 't'){ toggleTheme(); }
+  });
+
+  const themeTip = document.getElementById('themeTip');
+  const themeTipClose = document.getElementById('themeTipClose');
+  if(!localStorage.getItem('themeTipSeen')){
+    setTimeout(()=> themeTip.classList.add('show'), 1200);
+    var hideTip = ()=>{
+      themeTip.classList.remove('show');
+      localStorage.setItem('themeTipSeen', '1');
+    };
+    var autoHide = setTimeout(hideTip, 6000);
+    themeTipClose.addEventListener('click', ()=>{ clearTimeout(autoHide); hideTip(); });
+  } else {
+    themeTip.remove();
+  }
 
   const smoothLinks = document.querySelectorAll('a[href^="#"]');
   smoothLinks.forEach(a=>{

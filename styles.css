@@ -1,4 +1,4 @@
-:root{
+  :root{
     --bg:#f5f1e6;
     --bg-2:#ece4d2;
     --ink:#2b2a22;
@@ -252,6 +252,31 @@
   animation:pulse 2s ease-in-out infinite;
 }
   @keyframes pulse{ 0%,100%{ opacity:1; } 50%{ opacity:.45; } }
+
+  /* ---------------- theme keyboard-shortcut tip ---------------- */
+  .theme-tip{
+    position:fixed; bottom:26px; right:26px; z-index:80;
+    display:flex; align-items:center; gap:14px;
+    background:var(--card); color:var(--ink-soft);
+    border:1px solid color-mix(in srgb, var(--sage) 30%, transparent);
+    padding:12px 16px; border-radius:14px; font-size:.85rem;
+    box-shadow:0 16px 40px -20px var(--shadow);
+    opacity:0; transform:translateY(12px); pointer-events:none;
+    transition:opacity .5s ease, transform .5s ease;
+  }
+  .theme-tip.show{ opacity:1; transform:translateY(0); pointer-events:auto; }
+  .theme-tip kbd{
+    display:inline-block; padding:1px 7px; border-radius:6px;
+    background:color-mix(in srgb, var(--sage) 18%, var(--card));
+    border:1px solid color-mix(in srgb, var(--sage) 35%, transparent);
+    color:var(--ink); font-family:'Work Sans', sans-serif; font-weight:700; font-size:.8rem;
+  }
+  .theme-tip-close{
+    background:none; border:none; color:var(--ink-soft); font-size:1.1rem; line-height:1;
+    cursor:pointer; padding:2px; transition:color .2s;
+  }
+  .theme-tip-close:hover{ color:var(--ink); }
+  @media(max-width:600px){ .theme-tip{ left:20px; right:20px; bottom:20px; } }
 
   /* ---------------- expertise cards ---------------- */
   .expertise-grid{ display:grid; grid-template-columns:repeat(2,1fr); gap:22px; max-width:860px; }
