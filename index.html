@@ -322,7 +322,8 @@
 
   const themeTip = document.getElementById('themeTip');
   const themeTipClose = document.getElementById('themeTipClose');
-  if(!localStorage.getItem('themeTipSeen')){
+  const isDesktop = window.matchMedia('(min-width:901px)').matches;
+  if(isDesktop && !localStorage.getItem('themeTipSeen')){
     setTimeout(()=> themeTip.classList.add('show'), 1200);
     var hideTip = ()=>{
       themeTip.classList.remove('show');

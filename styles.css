@@ -276,6 +276,7 @@
     cursor:pointer; padding:2px; transition:color .2s;
   }
   .theme-tip-close:hover{ color:var(--ink); }
+  @media(max-width:900px){ .theme-tip{ display:none !important; } }
   @media(max-width:600px){ .theme-tip{ left:20px; right:20px; bottom:20px; } }
 
   /* ---------------- expertise cards ---------------- */
