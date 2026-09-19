@@ -128,6 +128,7 @@
   /* ---------------- education ---------------- */
   .edu-block{ border-top:1px solid var(--shadow); padding-top:32px; }
   .edu-line{ display:flex; flex-wrap:wrap; align-items:baseline; gap:10px; }
+  .edu-line + .edu-line{ margin-top:16px; }
   .edu-degree{ font-family:'Fraunces', serif; font-weight:600; font-size:clamp(1.05rem,2vw,1.35rem); }
   .edu-date{ font-family:'Courier New', monospace; color:var(--ink-soft); font-size:.88rem; }
   .sec-title{ font-family:'Fraunces', serif; font-weight:600; font-size:clamp(1.8rem,3.2vw,2.5rem); margin-bottom:40px; }
